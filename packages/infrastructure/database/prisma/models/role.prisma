@@ -1,0 +1,40 @@
+model Role {
+    org_id      String    @db.VarChar(32)
+    identifier  String    @db.VarChar(64)
+    name        String    @db.VarChar(128)
+    description String?   @db.VarChar(128)
+    internal    Boolean?  @default(false) @db.Boolean
+    created_at  DateTime  @default(now()) @db.Timestamptz(6)
+    created_by  String    @default("system")
+    updated_at  DateTime? @updatedAt @db.Timestamptz(6)
+    updated_by  String?
+
+    instance Instance @relation(fields: [org_id], references: [org_id], onDelete: Cascade, map: "fk_roles_instance")
+
+    permissions RolePermission[]
+    identities  UserRole[]
+
+    @@id([org_id, identifier], map: "pk_roles_org_id_identifier")
+    @@map("roles")
+    @@schema("instances")
+}
+
+model RolePermission {
+    org_id          String @db.VarChar(32)
+    role_identifier String @db.VarChar(32)
+
+    resource_server_identifier String @db.VarChar(64)
+    scope_value                String @db.VarChar
+
+    created_at DateTime  @default(now()) @db.Timestamptz(6)
+    created_by String    @default("system")
+    updated_at DateTime? @updatedAt @db.Timestamptz(6)
+    updated_by String?
+
+    role       Role       @relation(fields: [org_id, role_identifier], references: [org_id, identifier], onDelete: Cascade, map: "fk_role_permissions_role_role")
+    permission Permission @relation(fields: [org_id, resource_server_identifier, scope_value], references: [org_id, resource_server_identifier, scope_value], onDelete: Cascade, map: "fk_role_permissions_permission")
+
+    @@id([org_id, role_identifier, resource_server_identifier, scope_value], map: "pk_role_permissions")
+    @@map("roles_permissions")
+    @@schema("instances")
+}

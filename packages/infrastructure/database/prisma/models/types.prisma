@@ -1,0 +1,68 @@
+enum AccessGrantType {
+  authorization_code            @map("authorization_code")
+  client_credentials            @map("client_credentials")
+  refresh_token                 @map("refresh_token")
+  username_password_credentials @map("username_password_credentials")
+
+  @@schema("instances")
+}
+
+enum ClientType {
+  regular     @map("regular")
+  single_page @map("single_page")
+  native_app  @map("native_app")
+  backend     @map("backend")
+
+  @@schema("instances")
+}
+
+enum UserAction {
+  REGISTER
+  AUTHENTICATE
+  RESET_PASSWORD
+
+  @@schema("instances")
+}
+
+enum CredentialType {
+  TOKEN    @map("TOKEN")
+  PASSWORD @map("PASSWORD")
+
+  @@schema("instances")
+}
+
+enum PKCEMethod {
+  S256  @map("S256")
+  PLAIN @map("PLAIN")
+
+  @@schema("instances")
+}
+
+enum JwtSignAlg {
+  RS256 @map("RS256")
+  RS384 @map("RS384")
+  RS512 @map("RS512")
+  PS256 @map("PS256")
+  PS384 @map("PS384")
+  PS512 @map("PS512")
+  ES256 @map("ES256")
+  ES384 @map("ES384")
+  ES512 @map("ES512")
+
+  @@schema("instances")
+}
+
+enum Kty {
+  RSA @map("RSA")
+  EC  @map("EC")
+  OKP @map("OKP")
+
+  @@schema("instances")
+}
+
+enum JWTUse {
+  sig @map("sig")
+  enc @map("enc")
+
+  @@schema("instances")
+}

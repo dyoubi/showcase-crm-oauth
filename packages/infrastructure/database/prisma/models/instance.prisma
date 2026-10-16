@@ -1,0 +1,54 @@
+model Instance {
+  guid       String    @id(map: "pk_instance_guid") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  org_id     String    @db.VarChar(32)
+  name       String    @default("Instance") @db.VarChar
+  tags       String[]  @default([]) @db.VarChar(16)
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  clients          Client[]
+  databases        Database[]
+  resource_servers ResourceServer[]
+  users            User[]
+  roles            Role[]
+  jwt_keypairs     InstanceJwtKeyPair[]
+  html_templates   HTMLTemplate[]
+  themes           Theme[]
+  i18n             I18n[]
+
+  @@unique([org_id], map: "uq_instances_org_id")
+  @@map("instances")
+  @@schema("instances")
+}
+
+model InstanceJwtKeyPair {
+  org_id     String     @db.VarChar(32)
+  kid        String     @db.VarChar
+  kty        Kty
+  use        JWTUse
+  alg        JwtSignAlg
+  pub        Json       @db.JsonB
+  priv       Json       @db.JsonB
+  thumbprint String     @db.VarChar
+
+  not_before     Int? @db.Integer
+  expires_at     Int? @db.Integer
+  first_usage_at Int? @db.Integer
+  last_usage_at  Int? @db.Integer
+
+  revoked    Boolean?  @default(false) @db.Boolean
+  revoked_at DateTime? @db.Timestamptz(6)
+
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  instance Instance @relation(fields: [org_id], references: [org_id], map: "fk_instances_jwt_pairs_org", onDelete: Cascade, onUpdate: Cascade)
+
+  @@id([org_id, kid], map: "pk_instances_jwt_pairs")
+  @@map("instances_jwt_pairs")
+  @@schema("instances")
+}

@@ -1,0 +1,120 @@
+lang,path,default
+en,error/forgotPassword/too_many_requests,You have reached the limit on password change attempts. Please wait before trying again.
+en,error/forgotPassword/fallback,"We're sorry, something went wrong when requesting the password change."
+en,error/login/blocked_user,The user is blocked.
+en,error/login/invalid_user_password,Wrong credentials.
+en,error/login/invalid_captcha,Solve the challenge question to verify you are not a robot.
+en,error/login/invalid_recaptcha,Select the checkbox to verify you are not a robot.
+en,error/login/fallback,"We're sorry, something went wrong when attempting to log in."
+en,error/login/invalid_code,Wrong code.
+en,error/login/invalid_email_password,Wrong email or password.
+en,error/login/invalid_username_password,Wrong username or password.
+en,error/login/network,We could not reach the server. Please check your connection and try again.
+en,error/login/popup_closed,Popup window closed. Try again.
+en,error/login/unauthorized,Permissions were not granted. Try again.
+en,error/login/mfa_registration_required,Multifactor authentication is required but your device is not enrolled. Please enroll it before moving on.
+en,error/login/mfa_invalid_code,Wrong code. Please try again.
+en,error/login/password_change_required,"You need to update your password because this is the first time you are logging in, or because your password has expired."
+en,error/login/password_leaked,"We have detected a potential security issue with this account. To protect your account, we have blocked this login. An email was sent with instruction on how to unblock your account."
+en,error/login/too_many_attempts,Your account has been blocked after multiple consecutive login attempts.
+en,error/login/too_many_requests,"We're sorry. There are too many requests right now. Please reload the page and try again. If this persists, please try again later."
+en,error/login/session_missing,Couldn't complete your authentication request. Please try again after closing all open dialogs
+en,error/login/not_matching_email,Please use your corporate email to login.
+en,error/passwordless/bad_email,The email is invalid
+en,error/passwordless/bad_phone_number,The phone number is invalid
+en,error/passwordless/fallback,"We're sorry, something went wrong"
+en,error/passwordless/invalid_captcha,Solve the challenge question to verify you are not a robot.
+en,error/passwordless/invalid_recaptcha,Select the checkbox to verify you are not a robot.
+en,error/signUp/invalid_password,Password is invalid.
+en,error/signUp/fallback,"We're sorry, something went wrong when attempting to sign up."
+en,error/signUp/password_dictionary_error,Password is too common.
+en,error/signUp/password_leaked,"This combination of credentials was detected in a public data breach on another website. Before your account is created, please use a different password to keep it secure."
+en,error/signUp/password_no_user_info_error,Password is based on user information.
+en,error/signUp/password_strength_error,Password is too weak.
+en,error/signUp/user_exists,The user already exists.
+en,error/signUp/username_exists,The username already exists.
+en,error/signUp/social_signup_needs_terms_acception,Please agree to the Terms of Service below to continue.
+en,success/logIn,Thanks for logging in.
+en,success/forgotPassword,We've just sent you an email to reset your password.
+en,success/magicLink,We sent you a link to log in<br />to %s.
+en,success/signUp,Thanks for signing up.
+en,blankErrorHint,
+en,blankPasswordErrorHint,Password can't be blank
+en,blankEmailErrorHint,Email can't be blank
+en,blankUsernameErrorHint,Username can't be blank
+en,blankCaptchaErrorHint,Can't be blank
+en,codeInputPlaceholder,your code
+en,databaseSignUpInstructions,
+en,emailInputPlaceholder,yours@example.com
+en,failedLabel,Failed!
+en,forgotPasswordTitle,Reset your password
+en,forgotPasswordAction,Don't remember your password?
+en,forgotPasswordInstructions,Please enter your email address. We will send you an email to reset your password.
+en,forgotPasswordSubmitLabel,Send email
+en,invalidErrorHint,
+en,invalidPasswordErrorHint,Password is invalid
+en,invalidEmailErrorHint,Email is invalid
+en,invalidUsernameErrorHint,Username is invalid
+en,lastLoginInstructions,Last time you logged in with
+en,loginAtLabel,Log in at %s
+en,loginLabel,Log In
+en,loginSubmitLabel,Log In
+en,loginWithLabel,Sign in with %s
+en,notYourAccountAction,Not your account?
+en,passwordInputPlaceholder,your password
+en,passwordStrength/containsAtLeast,Contain at least %d of the following %d types of characters:
+en,passwordStrength/identicalChars,"No more than %s identical characters in a row (e.g., ""%s"" not allowed)"
+en,passwordStrength/nonEmpty,Non-empty password required
+en,passwordStrength/numbers,Numbers (i.e. 0-9)
+en,passwordStrength/lengthAtLeast,At least %d characters in length
+en,passwordStrength/lowerCase,Lower case letters (a-z)
+en,passwordStrength/shouldContain,Should contain:
+en,passwordStrength/specialCharacters,Special characters (e.g. !@#$%^&*)
+en,passwordStrength/upperCase,Upper case letters (A-Z)
+en,passwordlessEmailAlternativeInstructions,"Otherwise, enter your email to sign in<br/>or create an account"
+en,passwordlessEmailCodeInstructions,An email with the code has been sent to %s.
+en,passwordlessEmailInstructions,Enter your email to sign in<br/>or create an account
+en,passwordlessSMSAlternativeInstructions,"Otherwise, enter your phone to sign in<br/>or create an account"
+en,passwordlessSMSCodeInstructions,An SMS with the code has been sent to %s.
+en,passwordlessSMSInstructions,Enter your phone to sign in<br/>or create an account
+en,phoneNumberInputPlaceholder,your phone number
+en,resendCodeAction,Did not get the code?
+en,resendLabel,Resend
+en,resendingLabel,Resending...
+en,retryLabel,Retry
+en,sentLabel,Sent!
+en,showPassword,Show password
+en,signUpTitle,Sign Up
+en,signUpLabel,Sign Up
+en,signUpSubmitLabel,Sign Up
+en,signUpTerms,"By signing up, you agree to our terms of service and privacy policy."
+en,signUpWithLabel,Sign up with %s
+en,socialLoginInstructions,
+en,socialSignUpInstructions,
+en,ssoEnabled,Single Sign-On enabled
+en,submitLabel,Submit
+en,unrecoverableError,Something went wrong.<br />Please contact technical support.
+en,usernameFormatErrorHint,"Use %d-%d letters, numbers and the following characters: ""_"", ""."", ""+"", ""-"""
+en,usernameInputPlaceholder,your username
+en,welcome,Welcome %s!
+en,mfaInputPlaceholder,Code
+en,mfaLoginTitle,2-Step Verification
+en,mfaLoginInstructions,Please enter the verification code generated by your mobile application.
+en,mfaSubmitLabel,Log In
+en,mfaCodeErrorHint,Use %d numbers
+en,email,Email
+en,password,Password
+en,input/emailLabel,Email
+en,input/emailPlaceHolder,your@email
+en,input/usernameLabel,Username
+en,input/usernamePlaceHolder,great_master_foo
+en,input/firstnameLabel,First name
+en,input/firstnamePlaceHolder,John
+en,input/lastnameLabel,Last name
+en,input/lastnamePlaceHolder,Doe
+en,input/nameLabel,Name
+en,input/namePlaceHolder,John Doe
+en,input/passwordLabel,Password
+en,input/passwordPlaceHolder,********
+en,input/verificationCodeLabel,Code
+en,input/verificationCodePlaceHolder,XXX-XXX

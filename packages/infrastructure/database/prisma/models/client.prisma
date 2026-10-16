@@ -1,0 +1,90 @@
+model Client {
+  org_id                 String            @db.VarChar(32)
+  client_id              String            @db.VarChar(32)
+  name                   String            @db.VarChar(32)
+  logo_uri               String?           @db.VarChar(256)
+  type                   ClientType
+  secret                 String            @db.VarChar(64)
+  use_pkce               Boolean
+  pkce_method            PKCEMethod        @default(S256)
+  allow_implicit         Boolean           @default(false)
+  login_url              String            @default("") @db.VarChar(256)
+  allowed_callback_urls  String[]          @default([]) @db.VarChar(256)
+  allowed_logout_urls    String[]          @default([]) @db.VarChar(256)
+  allowed_web_origins    String[]          @default([]) @db.VarChar(256)
+  backchannel_logout_uri String?           @db.VarChar
+  grant_types            AccessGrantType[] @default([])
+
+  id_token_expiration        Int       @default(3600) @db.Integer
+  refresh_token_expiration   Int       @default(3600) @db.Integer
+  logout_token_expiration    Int       @default(320) @db.Integer
+  inactive_time_limit        Int?      @default(86400) @db.Integer
+  token_sender_constraining  Boolean   @default(false) @db.Boolean
+  jwks                       Json      @default("{}") @db.JsonB
+  request_object_signing_key Json?     @db.JsonB
+  internal                   Boolean?  @default(false) @db.Boolean
+  labels                     String[]  @default([]) @db.VarChar(32)
+  created_at                 DateTime  @default(now()) @db.Timestamptz(6)
+  created_by                 String    @default("system")
+  updated_at                 DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by                 String?
+
+  instance         Instance           @relation(fields: [org_id], references: [org_id], onDelete: Cascade, map: "fk_clients_instance")
+  connections      Connection[]
+  ClientPermission ClientPermission[]
+  ClientSigningKey ClientSigningKey[]
+
+  @@id([org_id, client_id], map: "pk_clients_client_id")
+  @@index([org_id], map: "ix_clients_org_id")
+  @@map("clients")
+  @@schema("instances")
+}
+
+model ClientSigningKey {
+  org_id        String       @db.VarChar(32)
+  client_id     String       @db.VarChar(32)
+  kid           String       @db.VarChar(128)
+  jwk           Json         @db.JsonB
+  kty           Kty
+  use           JWTUse
+  alg_allowed   JwtSignAlg[]
+  status        String       @db.VarChar(16)
+  not_before    Int          @db.Integer
+  first_seen_at DateTime?    @updatedAt @db.Timestamptz(6)
+  last_seen_at  DateTime?    @updatedAt @db.Timestamptz(6)
+
+  revoked    Boolean?  @default(false) @db.Boolean
+  revoked_at DateTime? @db.Timestamptz(6)
+
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  client Client @relation(fields: [org_id, client_id], references: [org_id, client_id], onDelete: Cascade, map: "fk_clients_signing_jeys_client")
+
+  @@id([org_id, client_id, kid], map: "pk_clients_signing_keys")
+  @@map("clients_signing_keys")
+  @@schema("instances")
+}
+
+model ClientPermission {
+  org_id    String @db.VarChar(32)
+  client_id String @db.VarChar(128)
+
+  resource_server_identifier String @db.VarChar(64)
+  scope_value                String @db.VarChar
+
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  client     Client     @relation(fields: [org_id, client_id], references: [org_id, client_id], onDelete: Cascade, map: "fk_clients_perms_client")
+  permission Permission @relation(fields: [org_id, resource_server_identifier, scope_value], references: [org_id, resource_server_identifier, scope_value], onDelete: Cascade, map: "fk_clients_perms_permission")
+
+  @@id([org_id, resource_server_identifier, scope_value, client_id], map: "pk_clients_perms_client_id")
+  @@index([org_id], map: "ix_clients_perms_org_id")
+  @@map("clients_perms")
+  @@schema("instances")
+}

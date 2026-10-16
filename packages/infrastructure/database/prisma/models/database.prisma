@@ -1,0 +1,42 @@
+model Database {
+  org_id      String       @db.VarChar(32)
+  identifier  String       @db.VarChar(32)
+  name        String       @db.VarChar(64)
+  salt        String       @db.VarChar(256)
+  internal    Boolean?     @default(false) @db.Boolean
+  labels      String[]     @default([]) @db.VarChar(32)
+  created_at  DateTime     @default(now()) @db.Timestamptz(6)
+  created_by  String       @default("system")
+  updated_at  DateTime?    @updatedAt @db.Timestamptz(6)
+  updated_by  String?
+  instance    Instance     @relation(fields: [org_id], references: [org_id], onDelete: Cascade, map: "fk_databases_org_id")
+  connections Connection[]
+  users       User[]
+
+  @@id([org_id, identifier], map: "pk_databases_guid_org_id")
+  @@map("databases")
+  @@schema("instances")
+}
+
+model Connection {
+  org_id                    String       @db.VarChar(32)
+  client_id                 String       @db.VarChar(32)
+  database_identifier       String       @db.VarChar(32)
+  enable                    Boolean      @default(true)
+  allow_actions             UserAction[] @default([])
+  template_email_validation String?      @db.VarChar()
+  template_password_reset   String?      @db.VarChar()
+
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  client   Client   @relation(fields: [org_id, client_id], references: [org_id, client_id], onDelete: Cascade, map: "fk_connection_client")
+  database Database @relation(fields: [org_id, database_identifier], references: [org_id, identifier], onDelete: Cascade, map: "fk_connection_database")
+
+  @@id([org_id, client_id, database_identifier], map: "pk_connection_client_id_database_identifier")
+  @@index([org_id, database_identifier], map: "ix_connection_database_identifier")
+  @@map("connections")
+  @@schema("instances")
+}

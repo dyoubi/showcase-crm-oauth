@@ -1,0 +1,48 @@
+model ResourceServer {
+  org_id                    String     @db.VarChar(32)
+  identifier                String     @db.VarChar(64)
+  name                      String     @db.VarChar(32)
+  access_token_life_time    Int        @default(86400) @db.Integer
+  jwt_signing_algorithm     JwtSignAlg
+  enable_rbac               Boolean?   @default(false)
+  enable_access_token_scope Boolean?   @default(false)
+  enable_rar                Boolean?   @default(false)
+  authorization_schemas     Json[]     @default([])
+  internal                  Boolean?   @default(false) @db.Boolean
+  labels                    String[]   @default([]) @db.VarChar(32)
+  created_at                DateTime   @default(now()) @db.Timestamptz(6)
+  created_by                String     @default("system")
+  updated_at                DateTime?  @updatedAt @db.Timestamptz(6)
+  updated_by                String?
+
+  instance             Instance         @relation(fields: [org_id], references: [org_id], onDelete: Cascade, map: "fk_resource_servers_instance")
+  scopes               Permission[]
+  identity_permissions UserPermission[]
+
+  @@id([org_id, identifier], map: "pk_resource_servers_org_identifier")
+  @@index([org_id], map: "ix_resource_servers_org_id")
+  @@map("resource_servers")
+  @@schema("instances")
+}
+
+model Permission {
+  org_id String @db.VarChar(32)
+
+  resource_server_identifier String @db.VarChar(64)
+  scope_value                String @db.VarChar
+
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  resource_server     ResourceServer     @relation(fields: [org_id, resource_server_identifier], references: [org_id, identifier], onDelete: Cascade, map: "fk_permissions_resource_server_guid")
+  users_permissions   UserPermission[]
+  rolers_permissions  RolePermission[]
+  clients_permissions ClientPermission[]
+
+  @@id([org_id, resource_server_identifier, scope_value], map: "pk_permissions_org_id_rs_identifier_scope_value")
+  @@unique([org_id, resource_server_identifier, scope_value], map: "uq_permissions_org_id_rs_identifier_scope_value")
+  @@map("permissions")
+  @@schema("instances")
+}

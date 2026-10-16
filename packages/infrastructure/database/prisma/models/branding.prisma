@@ -1,0 +1,72 @@
+enum TemplateUsage {
+    verification_email_link           @map("verification_email_link")
+    verification_email_code           @map("verification_email_code")
+    welcome_email                     @map("welcome_email")
+    change_password_email_link        @map("change_password_email_link")
+    change_password_email_code        @map("change_password_email_code")
+    blocked_account_email             @map("blocked_account_email")
+    code_verification_email_mfa_email @map("code_verification_email_mfa_email")
+    user_invitation_email             @map("user_invitation_email")
+
+    @@schema("branding")
+}
+
+enum BinaryTheme {
+    light @map("light")
+    dark  @map("dark")
+
+    @@schema("branding")
+}
+
+model HTMLTemplate {
+    org_id      String        @db.VarChar()
+    template_id String        @db.VarChar()
+    usage       TemplateUsage
+    lang        String?       @db.VarChar()
+    custom      Boolean?      @db.Boolean()
+    html        String        @db.VarChar()
+    schema      Json          @db.JsonB()
+
+    instance Instance @relation(fields: [org_id], references: [org_id], map: "fk_html_templates_instance", onDelete: Cascade, onUpdate: Cascade)
+
+    @@id([org_id, template_id], map: "pk_html_templates")
+    @@unique([org_id, usage, lang, custom], map: "uq_html_templates_usage_lang")
+    @@index([org_id, lang], map: "ix_html_templates_lang")
+    @@index([org_id, custom], map: "ix_html_templates_custom")
+    @@map("html_templates")
+    @@schema("branding")
+}
+
+model I18n {
+    org_id String @db.VarChar()
+    lang   String @db.VarChar()
+    page   String @default("") @db.VarChar()
+    values Json   @db.JsonB()
+
+    instance Instance @relation(fields: [org_id], references: [org_id], map: "fk_i18n_instance", onDelete: Cascade, onUpdate: Cascade)
+
+    @@id([org_id, lang, page], map: "pk_i18n_lang_page")
+    @@index([org_id, lang], map: "ix_i18n_lang")
+    @@index([org_id, page], map: "ix_i18n_page")
+    @@map("i18n")
+    @@schema("branding")
+}
+
+model Theme {
+    org_id          String @db.VarChar()
+    theme_id        String @db.VarChar()
+    colors          Json   @db.JsonB()
+    fonts           Json   @db.JsonB()
+    borders         Json   @db.JsonB()
+    widget          Json   @db.JsonB()
+    page_background Json   @db.JsonB()
+
+    mode BinaryTheme
+
+    instance Instance @relation(fields: [org_id], references: [org_id], map: "fk_themes_instance", onDelete: Cascade, onUpdate: Cascade)
+
+    @@id([org_id, theme_id], map: "pk_themes")
+    @@unique([org_id, mode], map: "uq_themes_mode")
+    @@map("themes")
+    @@schema("branding")
+}

@@ -1,0 +1,78 @@
+{
+	"org_id": "default",
+	"theme_id": "default_dark_v1",
+	"colors": {
+		"primary_button": "#3B82F6",
+		"primary_button_label": "#FFFFFF",
+		"secondary_button_border": "#334155",
+		"secondary_button_label": "#E2E8F0",
+		"read_only_background": "#0B1220",
+		"base_focus_color": "#93C5FD",
+		"base_hover_color": "#60A5FA",
+		"links_focused_components": "#93C5FD",
+		"header": "#F8FAFC",
+		"body_text": "#CBD5E1",
+		"widget_background": "#0F172A",
+		"widget_border": "#1E293B",
+		"input_labels_placeholders": "#94A3B8",
+		"input_filled_text": "#E2E8F0",
+		"input_border": "#334155",
+		"input_background": "#0B1220",
+		"icons": "#94A3B8",
+		"error": "#F87171",
+		"success": "#22C55E",
+		"captcha_widget_theme": "dark"
+	},
+	"fonts": {
+		"font_url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap",
+		"reference_text_size": "16px",
+		"title": {
+			"bold": "700",
+			"size": 28
+		},
+		"subtitle": {
+			"bold": "600",
+			"size": 20
+		},
+		"body_text": {
+			"bold": "400",
+			"size": 16
+		},
+		"input_labels": {
+			"bold": "600",
+			"size": 12
+		},
+		"links": {
+			"bold": "600",
+			"size": 14
+		},
+		"links_style": "underline"
+	},
+	"borders": {
+		"buttons": {
+			"weight": 1,
+			"radius": "9999px",
+			"shape": "pill"
+		},
+		"inputs": {
+			"weight": 1,
+			"radius": "10px",
+			"shape": "rounded"
+		},
+		"widget_corner_radius": 24,
+		"widget_border_weight": 1,
+		"show_widget_shadow": 1
+	},
+	"widget": {
+		"logo_position": "left",
+		"logo_url": "https://example.com/logo-dark.svg",
+		"logo_height": 40,
+		"header_text_alignment": "left",
+		"social_buttons_layout": "center"
+	},
+	"page_background": {
+		"page_layout": "center",
+		"background_color": "#020617",
+		"background_image_url": ""
+	}
+}

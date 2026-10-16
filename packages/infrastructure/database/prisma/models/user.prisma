@@ -1,0 +1,90 @@
+model User {
+  org_id     String  @db.VarChar(32)
+  user_id    String  @db.VarChar(64)
+  connection String  @db.VarChar(64)
+  email      String  @db.VarChar(128)
+  username   String? @db.VarChar(128)
+  name       String? @db.VarChar(128)
+
+  metadata Json @default("{}") @db.JsonB
+
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  instance          Instance         @relation(fields: [org_id], references: [org_id], onDelete: Cascade, map: "fk_users_instance")
+  database          Database         @relation(fields: [org_id, connection], references: [org_id, identifier], onDelete: Cascade, map: "fk_users_database")
+  users_permissions UserPermission[]
+  users_roles       UserRole[]
+
+  @@id([org_id, user_id], map: "pk_users_org_id_user_id")
+  @@unique([org_id, email, connection], map: "uq_users_email_connection")
+  @@index([org_id], map: "ix_users_org_id")
+  @@index([org_id, user_id], map: "ix_users_user_id")
+  @@index([org_id, connection], map: "ix_users_connection")
+  @@index([org_id, email], map: "ix_users_email")
+  @@index([org_id, username], map: "ix_users_username")
+  @@map("users")
+  @@schema("instances")
+}
+
+model UserCredentials {
+  org_id     String         @db.VarChar(32)
+  user_id    String         @db.VarChar(64)
+  connection String         @db.VarChar(64)
+  email      String         @db.VarChar(128)
+  username   String?        @db.VarChar(128)
+  type       CredentialType
+  value      String         @db.VarChar(512)
+  revoked    Boolean?       @default(false)
+  revoked_at DateTime?      @db.Timestamptz(6)
+
+  @@id([org_id, user_id, connection, value], map: "pk_users_creds")
+  @@index([org_id, connection, email], map: "ix_users_creds_email")
+  @@index([org_id, connection, username], map: "ix_users_creds_username")
+  @@map("users_credentials")
+  @@schema("instances")
+}
+
+model UserPermission {
+  org_id  String @db.VarChar(32)
+  user_id String @db.VarChar(128)
+
+  resource_server_identifier String @db.VarChar(64)
+  scope_value                String @db.VarChar
+
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  user            User           @relation(fields: [org_id, user_id], references: [org_id, user_id], onDelete: Cascade, map: "fk_users_permissions")
+  resource_server ResourceServer @relation(fields: [org_id, resource_server_identifier], references: [org_id, identifier], onDelete: Cascade, map: "fk_users_permissions_resource_server")
+  permission      Permission     @relation(fields: [org_id, resource_server_identifier, scope_value], references: [org_id, resource_server_identifier, scope_value], onDelete: Cascade, map: "fk_users_permissions_rs_identifier_permission_scope_value")
+
+  @@id([org_id, resource_server_identifier, scope_value, user_id], map: "pk_users_permissions")
+  @@index([org_id, user_id], map: "ix_users_permissions_user_id")
+  @@index([org_id, resource_server_identifier], map: "ix_users_permissions_rs")
+  @@index([org_id, resource_server_identifier, scope_value], map: "ix_users_permissions_rs_scope_value")
+  @@map("users_permissions")
+  @@schema("instances")
+}
+
+model UserRole {
+  org_id          String @db.VarChar(32)
+  user_id         String @db.VarChar(64)
+  role_identifier String @db.VarChar(64)
+
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  created_by String    @default("system")
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+  updated_by String?
+
+  users User @relation(fields: [org_id, user_id], references: [org_id, user_id], onDelete: Cascade, map: "fk_users_roles_users")
+  role  Role @relation(fields: [org_id, role_identifier], references: [org_id, identifier], onDelete: Cascade, map: "fk_users_roles_role")
+
+  @@id([org_id, role_identifier, user_id], map: "pk_users_roles")
+  @@map("users_roles")
+  @@schema("instances")
+}

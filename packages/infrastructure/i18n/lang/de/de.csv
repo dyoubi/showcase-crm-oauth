@@ -1,0 +1,104 @@
+lang,path,default
+de,error/forgotPassword/too_many_requests,"Sie haben das Limit für Passwortänderungen erreicht. Bitte warten Sie, bevor Sie es erneut versuchen."
+de,error/forgotPassword/fallback,"Entschuldigung, beim Anfordern der Passwortänderung ist etwas schiefgelaufen."
+de,error/login/blocked_user,Der Benutzer ist gesperrt.
+de,error/login/invalid_user_password,Falsche Anmeldedaten.
+de,error/login/invalid_captcha,"Beantworten Sie die Prüffrage, um zu bestätigen, dass Sie kein Roboter sind."
+de,error/login/invalid_recaptcha,"Aktivieren Sie das Kontrollkästchen, um zu bestätigen, dass Sie kein Roboter sind."
+de,error/login/fallback,"Entschuldigung, beim Anmeldeversuch ist etwas schiefgelaufen."
+de,error/login/invalid_code,Falscher Code.
+de,error/login/invalid_email_password,Falsche E‑Mail oder falsches Passwort.
+de,error/login/invalid_username_password,Falscher Benutzername oder falsches Passwort.
+de,error/login/network,Der Server konnte nicht erreicht werden. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut.
+de,error/login/popup_closed,Popup‑Fenster geschlossen. Bitte erneut versuchen.
+de,error/login/unauthorized,Berechtigungen wurden nicht erteilt. Bitte erneut versuchen.
+de,error/login/mfa_registration_required,"Mehrfaktor-Authentifizierung ist erforderlich, aber Ihr Gerät ist nicht registriert. Bitte registrieren Sie es, bevor Sie fortfahren."
+de,error/login/mfa_invalid_code,Falscher Code. Bitte versuchen Sie es erneut.
+de,error/login/password_change_required,"Sie müssen Ihr Passwort aktualisieren, da dies Ihre erste Anmeldung ist oder Ihr Passwort abgelaufen ist."
+de,error/login/password_leaked,Wir haben ein mögliches Sicherheitsproblem mit diesem Konto erkannt. Zum Schutz Ihres Kontos wurde diese Anmeldung blockiert. Eine E‑Mail mit Anweisungen zum Entsperren wurde gesendet.
+de,error/login/too_many_attempts,Ihr Konto wurde nach mehreren aufeinanderfolgenden Anmeldeversuchen gesperrt.
+de,error/login/too_many_requests,"Es tut uns leid. Zurzeit gibt es zu viele Anfragen. Bitte laden Sie die Seite neu und versuchen Sie es erneut. Wenn das weiterhin auftritt, versuchen Sie es später erneut."
+de,error/login/session_missing,"Ihre Authentifizierungsanfrage konnte nicht abgeschlossen werden. Bitte versuchen Sie es erneut, nachdem Sie alle offenen Dialoge geschlossen haben."
+de,error/login/not_matching_email,Bitte verwenden Sie Ihre Firmen-E‑Mail für die Anmeldung.
+de,error/passwordless/bad_email,Die E‑Mail-Adresse ist ungültig
+de,error/passwordless/bad_phone_number,Die Telefonnummer ist ungültig
+de,error/passwordless/fallback,"Entschuldigung, etwas ist schiefgelaufen"
+de,error/passwordless/invalid_captcha,"Beantworten Sie die Prüffrage, um zu bestätigen, dass Sie kein Roboter sind."
+de,error/passwordless/invalid_recaptcha,"Aktivieren Sie das Kontrollkästchen, um zu bestätigen, dass Sie kein Roboter sind."
+de,error/signUp/invalid_password,Das Passwort ist ungültig.
+de,error/signUp/fallback,"Entschuldigung, bei der Registrierung ist etwas schiefgelaufen."
+de,error/signUp/password_dictionary_error,Das Passwort ist zu gängig.
+de,error/signUp/password_leaked,"Diese Kombination von Zugangsdaten wurde bei einem öffentlichen Datenleck auf einer anderen Website entdeckt. Bevor Ihr Konto erstellt wird, verwenden Sie bitte ein anderes Passwort, um es zu schützen."
+de,error/signUp/password_no_user_info_error,Das Passwort basiert auf Benutzerinformationen.
+de,error/signUp/password_strength_error,Das Passwort ist zu schwach.
+de,error/signUp/user_exists,Der Benutzer existiert bereits.
+de,error/signUp/username_exists,Der Benutzername existiert bereits.
+de,error/signUp/social_signup_needs_terms_acception,"Bitte akzeptieren Sie unten die Nutzungsbedingungen, um fortzufahren."
+de,success/logIn,Danke für die Anmeldung.
+de,success/forgotPassword,Wir haben Ihnen soeben eine E‑Mail zum Zurücksetzen Ihres Passworts gesendet.
+de,success/magicLink,Wir haben Ihnen einen Link zum Anmelden<br />bei %s gesendet.
+de,success/signUp,Danke für Ihre Registrierung.
+de,blankErrorHint,
+de,blankPasswordErrorHint,Passwort darf nicht leer sein
+de,blankEmailErrorHint,E‑Mail darf nicht leer sein
+de,blankUsernameErrorHint,Benutzername darf nicht leer sein
+de,blankCaptchaErrorHint,Darf nicht leer sein
+de,codeInputPlaceholder,Ihr Code
+de,databaseSignUpInstructions,
+de,emailInputPlaceholder,sie@beispiel.com
+de,failedLabel,Fehlgeschlagen!
+de,forgotPasswordTitle,Passwort zurücksetzen
+de,forgotPasswordAction,Passwort vergessen?
+de,forgotPasswordInstructions,Bitte geben Sie Ihre E‑Mail-Adresse ein. Wir senden Ihnen eine E‑Mail zum Zurücksetzen Ihres Passworts.
+de,forgotPasswordSubmitLabel,E‑Mail senden
+de,invalidErrorHint,
+de,invalidPasswordErrorHint,Passwort ist ungültig
+de,invalidEmailErrorHint,E‑Mail ist ungültig
+de,invalidUsernameErrorHint,Benutzername ist ungültig
+de,lastLoginInstructions,Zuletzt haben Sie sich angemeldet mit
+de,loginAtLabel,Anmelden bei %s
+de,loginLabel,Anmelden
+de,loginSubmitLabel,Anmelden
+de,loginWithLabel,Anmelden mit %s
+de,notYourAccountAction,Nicht Ihr Konto?
+de,passwordInputPlaceholder,Ihr Passwort
+de,passwordStrength/containsAtLeast,Enthält mindestens %d der folgenden %d Zeichentypen:
+de,passwordStrength/identicalChars,Nicht mehr als %s identische Zeichen hintereinander (z. B. „%s“ nicht erlaubt)
+de,passwordStrength/nonEmpty,Nicht‑leeres Passwort erforderlich
+de,passwordStrength/numbers,Zahlen (d. h. 0–9)
+de,passwordStrength/lengthAtLeast,Mindestens %d Zeichen
+de,passwordStrength/lowerCase,Kleinbuchstaben (a–z)
+de,passwordStrength/shouldContain,Sollte enthalten:
+de,passwordStrength/specialCharacters,Sonderzeichen (z. B. !@#$%^&*)
+de,passwordStrength/upperCase,Großbuchstaben (A–Z)
+de,passwordlessEmailAlternativeInstructions,"Alternativ geben Sie Ihre E‑Mail ein, um sich anzumelden<br/>oder ein Konto zu erstellen"
+de,passwordlessEmailCodeInstructions,Eine E‑Mail mit dem Code wurde an %s gesendet.
+de,passwordlessEmailInstructions,"Geben Sie Ihre E‑Mail ein, um sich anzumelden<br/>oder ein Konto zu erstellen"
+de,passwordlessSMSAlternativeInstructions,"Alternativ geben Sie Ihre Telefonnummer ein, um sich anzumelden<br/>oder ein Konto zu erstellen"
+de,passwordlessSMSCodeInstructions,Eine SMS mit dem Code wurde an %s gesendet.
+de,passwordlessSMSInstructions,"Geben Sie Ihre Telefonnummer ein, um sich anzumelden<br/>oder ein Konto zu erstellen"
+de,phoneNumberInputPlaceholder,Ihre Telefonnummer
+de,resendCodeAction,Code nicht erhalten?
+de,resendLabel,Erneut senden
+de,resendingLabel,Wird erneut gesendet...
+de,retryLabel,Erneut versuchen
+de,sentLabel,Gesendet!
+de,showPassword,Passwort anzeigen
+de,signUpTitle,Konto erstellen
+de,signUpLabel,Registrieren
+de,signUpSubmitLabel,Registrieren
+de,signUpTerms,Mit der Registrierung stimmen Sie unseren Nutzungsbedingungen und unserer Datenschutzrichtlinie zu.
+de,signUpWithLabel,Registrieren mit %s
+de,socialLoginInstructions,
+de,socialSignUpInstructions,
+de,ssoEnabled,Single Sign‑On aktiviert
+de,submitLabel,Senden
+de,unrecoverableError,Etwas ist schiefgelaufen.<br />Bitte wenden Sie sich an den technischen Support.
+de,usernameFormatErrorHint,"Verwenden Sie %d–%d Buchstaben, Zahlen und die folgenden Zeichen: ""_"", ""."", ""+"", ""-"""
+de,usernameInputPlaceholder,Ihr Benutzername
+de,welcome,Willkommen %s!
+de,mfaInputPlaceholder,Code
+de,mfaLoginTitle,Bestätigung in 2 Schritten
+de,mfaLoginInstructions,"Bitte geben Sie den Bestätigungscode ein, der von Ihrer mobilen App generiert wurde."
+de,mfaSubmitLabel,Anmelden
+de,mfaCodeErrorHint,Verwenden Sie %d Zahlen

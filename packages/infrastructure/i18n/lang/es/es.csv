@@ -1,0 +1,104 @@
+lang,path,default
+es,error/forgotPassword/too_many_requests,Has alcanzado el límite de intentos de cambio de contraseña. Espera antes de intentarlo de nuevo.
+es,error/forgotPassword/fallback,"Lo sentimos, algo salió mal al solicitar el cambio de contraseña."
+es,error/login/blocked_user,El usuario está bloqueado.
+es,error/login/invalid_user_password,Credenciales incorrectas.
+es,error/login/invalid_captcha,Resuelve la pregunta de verificación para confirmar que no eres un robot.
+es,error/login/invalid_recaptcha,Marca la casilla para confirmar que no eres un robot.
+es,error/login/fallback,"Lo sentimos, algo salió mal al intentar iniciar sesión."
+es,error/login/invalid_code,Código incorrecto.
+es,error/login/invalid_email_password,Correo electrónico o contraseña incorrectos.
+es,error/login/invalid_username_password,Nombre de usuario o contraseña incorrectos.
+es,error/login/network,No pudimos conectarnos con el servidor. Verifica tu conexión e inténtalo de nuevo.
+es,error/login/popup_closed,La ventana emergente se cerró. Inténtalo de nuevo.
+es,error/login/unauthorized,No se otorgaron permisos. Inténtalo de nuevo.
+es,error/login/mfa_registration_required,"Se requiere autenticación multifactor, pero tu dispositivo no está registrado. Regístralo antes de continuar."
+es,error/login/mfa_invalid_code,Código incorrecto. Inténtalo de nuevo.
+es,error/login/password_change_required,Debes actualizar tu contraseña porque es la primera vez que inicias sesión o porque tu contraseña ha caducado.
+es,error/login/password_leaked,"Hemos detectado un posible problema de seguridad con esta cuenta. Para protegerla, hemos bloqueado este inicio de sesión. Se envió un correo con instrucciones para desbloquear tu cuenta."
+es,error/login/too_many_attempts,Tu cuenta ha sido bloqueada tras varios intentos de inicio de sesión consecutivos.
+es,error/login/too_many_requests,"Lo sentimos. Hay demasiadas solicitudes en este momento. Recarga la página e inténtalo de nuevo. Si persiste, inténtalo más tarde."
+es,error/login/session_missing,No se pudo completar tu solicitud de autenticación. Inténtalo de nuevo después de cerrar todos los diálogos abiertos.
+es,error/login/not_matching_email,Usa tu correo corporativo para iniciar sesión.
+es,error/passwordless/bad_email,El correo electrónico no es válido
+es,error/passwordless/bad_phone_number,El número de teléfono no es válido
+es,error/passwordless/fallback,"Lo sentimos, algo salió mal"
+es,error/passwordless/invalid_captcha,Resuelve la pregunta de verificación para confirmar que no eres un robot.
+es,error/passwordless/invalid_recaptcha,Marca la casilla para confirmar que no eres un robot.
+es,error/signUp/invalid_password,La contraseña no es válida.
+es,error/signUp/fallback,"Lo sentimos, algo salió mal al intentar registrarte."
+es,error/signUp/password_dictionary_error,La contraseña es demasiado común.
+es,error/signUp/password_leaked,"Esta combinación de credenciales se detectó en una filtración de datos pública en otro sitio. Antes de crear tu cuenta, usa una contraseña diferente para mantenerla segura."
+es,error/signUp/password_no_user_info_error,La contraseña se basa en información del usuario.
+es,error/signUp/password_strength_error,La contraseña es demasiado débil.
+es,error/signUp/user_exists,El usuario ya existe.
+es,error/signUp/username_exists,El nombre de usuario ya existe.
+es,error/signUp/social_signup_needs_terms_acception,Acepta los Términos del servicio a continuación para continuar.
+es,success/logIn,Gracias por iniciar sesión.
+es,success/forgotPassword,Te acabamos de enviar un correo para restablecer tu contraseña.
+es,success/magicLink,Te enviamos un enlace para iniciar sesión<br />en %s.
+es,success/signUp,Gracias por registrarte.
+es,blankErrorHint,
+es,blankPasswordErrorHint,La contraseña no puede estar vacía
+es,blankEmailErrorHint,El correo electrónico no puede estar vacío
+es,blankUsernameErrorHint,El nombre de usuario no puede estar vacío
+es,blankCaptchaErrorHint,No puede estar vacío
+es,codeInputPlaceholder,tu código
+es,databaseSignUpInstructions,
+es,emailInputPlaceholder,tucorreo@ejemplo.com
+es,failedLabel,¡Error!
+es,forgotPasswordTitle,Restablecer tu contraseña
+es,forgotPasswordAction,¿No recuerdas tu contraseña?
+es,forgotPasswordInstructions,Introduce tu correo electrónico. Te enviaremos un correo para restablecer tu contraseña.
+es,forgotPasswordSubmitLabel,Enviar correo
+es,invalidErrorHint,
+es,invalidPasswordErrorHint,La contraseña no es válida
+es,invalidEmailErrorHint,El correo electrónico no es válido
+es,invalidUsernameErrorHint,El nombre de usuario no es válido
+es,lastLoginInstructions,La última vez iniciaste sesión con
+es,loginAtLabel,Iniciar sesión en %s
+es,loginLabel,Iniciar sesión
+es,loginSubmitLabel,Iniciar sesión
+es,loginWithLabel,Iniciar sesión con %s
+es,notYourAccountAction,¿No es tu cuenta?
+es,passwordInputPlaceholder,tu contraseña
+es,passwordStrength/containsAtLeast,Contener al menos %d de los siguientes %d tipos de caracteres:
+es,passwordStrength/identicalChars,"No más de %s caracteres idénticos seguidos (p. ej., ""%s"" no permitido)"
+es,passwordStrength/nonEmpty,Se requiere una contraseña no vacía
+es,passwordStrength/numbers,"Números (es decir, 0-9)"
+es,passwordStrength/lengthAtLeast,Al menos %d caracteres
+es,passwordStrength/lowerCase,Letras minúsculas (a-z)
+es,passwordStrength/shouldContain,Debe contener:
+es,passwordStrength/specialCharacters,"Caracteres especiales (p. ej., !@#$%^&*)"
+es,passwordStrength/upperCase,Letras mayúsculas (A-Z)
+es,passwordlessEmailAlternativeInstructions,"De lo contrario, introduce tu correo para iniciar sesión<br/>o crear una cuenta"
+es,passwordlessEmailCodeInstructions,Se envió un correo con el código a %s.
+es,passwordlessEmailInstructions,Introduce tu correo para iniciar sesión<br/>o crear una cuenta
+es,passwordlessSMSAlternativeInstructions,"De lo contrario, introduce tu teléfono para iniciar sesión<br/>o crear una cuenta"
+es,passwordlessSMSCodeInstructions,Se envió un SMS con el código a %s.
+es,passwordlessSMSInstructions,Introduce tu teléfono para iniciar sesión<br/>o crear una cuenta
+es,phoneNumberInputPlaceholder,tu número de teléfono
+es,resendCodeAction,¿No recibiste el código?
+es,resendLabel,Reenviar
+es,resendingLabel,Reenviando...
+es,retryLabel,Reintentar
+es,sentLabel,¡Enviado!
+es,showPassword,Mostrar contraseña
+es,signUpTitle,Crear cuenta
+es,signUpLabel,Registrarse
+es,signUpSubmitLabel,Registrarse
+es,signUpTerms,"Al registrarte, aceptas nuestros términos del servicio y la política de privacidad."
+es,signUpWithLabel,Registrarse con %s
+es,socialLoginInstructions,
+es,socialSignUpInstructions,
+es,ssoEnabled,Inicio de sesión único habilitado
+es,submitLabel,Enviar
+es,unrecoverableError,Algo salió mal.<br />Ponte en contacto con el soporte técnico.
+es,usernameFormatErrorHint,"Usa %d-%d letras, números y los siguientes caracteres: ""_"", ""."", ""+"", ""-"""
+es,usernameInputPlaceholder,tu nombre de usuario
+es,welcome,¡Bienvenido %s!
+es,mfaInputPlaceholder,Código
+es,mfaLoginTitle,Verificación en 2 pasos
+es,mfaLoginInstructions,Introduce el código de verificación generado por tu aplicación móvil.
+es,mfaSubmitLabel,Iniciar sesión
+es,mfaCodeErrorHint,Usa %d números

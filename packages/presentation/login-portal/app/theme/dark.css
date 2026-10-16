@@ -1,0 +1,191 @@
+/* =========================================
+   Theme Default Styles
+   Generated from theme JSON schema
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary-button: #3B82F6;
+  --color-primary-button-label: #FFFFFF;
+  --color-secondary-button-border: #CBD5E1;
+  --color-secondary-button-label: #0F172A;
+  --color-read-only-background: #F8FAFC;
+  --color-base-focus: #2563EB;
+  --color-base-hover: #1D4ED8;
+  --color-links-focused: #2563EB;
+  --color-header: #0F172A;
+  --color-body-text: #334155;
+  --color-widget-background: #FFFFFF;
+  --color-widget-border: #E2E8F0;
+  --color-input-labels: #64748B;
+  --color-input-text: #0F172A;
+  --color-input-border: #CBD5E1;
+  --color-input-background: #FFFFFF;
+  --color-icons: #475569;
+  --color-error: #DC2626;
+  --color-success: #16A34A;
+
+  /* Fonts */
+  --font-family-base: 'Inter', sans-serif;
+  --font-size-reference: 16px;
+
+  --font-size-title: 28px;
+  --font-weight-title: 700;
+
+  --font-size-subtitle: 20px;
+  --font-weight-subtitle: 600;
+
+  --font-size-body: 16px;
+  --font-weight-body: 400;
+
+  --font-size-input-label: 12px;
+  --font-weight-input-label: 600;
+
+  --font-size-link: 14px;
+  --font-weight-link: 600;
+  --font-link-decoration: underline;
+
+  /* Borders */
+  --button-border-weight: 1px;
+  --button-radius: 9999px;
+  --input-border-weight: 1px;
+  --input-radius: 10px;
+
+  --widget-radius: 24px;
+  --widget-border-weight: 1px;
+  --widget-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* Page Background */
+  --page-background-color: #F1F5F9;
+}
+
+/* ===============================
+   Base Typography
+   =============================== */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-reference);
+  color: var(--color-body-text);
+  background-color: var(--page-background-color);
+}
+
+/* Titles */
+h1, .title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-title);
+  color: var(--color-header);
+}
+
+h2, .subtitle {
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-subtitle);
+  color: var(--color-header);
+}
+
+/* Body text */
+p, .body-text {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  color: var(--color-body-text);
+}
+
+/* Links */
+a {
+  font-size: var(--font-size-link);
+  font-weight: var(--font-weight-link);
+  text-decoration: var(--font-link-decoration);
+  color: var(--color-base-focus);
+}
+
+a:hover {
+  color: var(--color-base-hover);
+}
+
+/* ===============================
+   Buttons
+   =============================== */
+.button-primary {
+  background-color: var(--color-primary-button);
+  color: var(--color-primary-button-label);
+  border: none;
+  border-radius: var(--button-radius);
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--color-base-hover);
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--color-secondary-button-label);
+  border: var(--button-border-weight) solid var(--color-secondary-button-border);
+  border-radius: var(--button-radius);
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===============================
+   Inputs
+   =============================== */
+input, textarea, select {
+  background-color: var(--color-input-background);
+  border: var(--input-border-weight) solid var(--color-input-border);
+  border-radius: var(--input-radius);
+  padding: 0.5rem 0.75rem;
+  font-size: var(--font-size-body);
+  color: var(--color-input-text);
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-base-focus);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+label {
+  font-size: var(--font-size-input-label);
+  font-weight: var(--font-weight-input-label);
+  color: var(--color-input-labels);
+}
+
+/* ===============================
+   Widget Container
+   =============================== */
+.widget {
+  background-color: var(--color-widget-background);
+  border: var(--widget-border-weight) solid var(--color-widget-border);
+  border-radius: var(--widget-radius);
+  padding: 2rem;
+  box-shadow: var(--widget-shadow);
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--color-header);
+  font-weight: var(--font-weight-title);
+  font-size: var(--font-size-title);
+}
+
+.widget-header.logo-left img {
+  height: 40px;
+  margin-right: 1rem;
+}
+
+/* ===============================
+   Status Colors
+   =============================== */
+.text-error {
+  color: var(--color-error);
+}
+
+.text-success {
+  color: var(--color-success);
+}

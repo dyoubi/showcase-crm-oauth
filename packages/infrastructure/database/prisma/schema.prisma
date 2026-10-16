@@ -1,0 +1,16 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+generator drizzle {
+  provider = "drizzle-prisma-generator"
+  output   = "../src/drizzle/schema-prisma" // Where to put generated Drizle tables
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("PG_DATABASE_URL")
+  extensions = [uuid_ossp(map: "uuid-ossp", schema: "public")]
+  schemas    = ["public", "instances", "authentication", "branding"]
+}

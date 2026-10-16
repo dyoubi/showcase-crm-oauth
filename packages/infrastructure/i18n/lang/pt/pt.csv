@@ -1,0 +1,104 @@
+lang,path,default
+pt,error/forgotPassword/too_many_requests,Atingiu o limite de tentativas de alteração de palavra-passe. Aguarde antes de tentar novamente.
+pt,error/forgotPassword/fallback,"Lamentamos, algo correu mal ao solicitar a alteração da palavra-passe."
+pt,error/login/blocked_user,O utilizador está bloqueado.
+pt,error/login/invalid_user_password,Credenciais incorretas.
+pt,error/login/invalid_captcha,Resolva a pergunta de verificação para confirmar que não é um robô.
+pt,error/login/invalid_recaptcha,Selecione a caixa para confirmar que não é um robô.
+pt,error/login/fallback,"Lamentamos, algo correu mal ao tentar iniciar sessão."
+pt,error/login/invalid_code,Código incorreto.
+pt,error/login/invalid_email_password,E‑mail ou palavra-passe incorretos.
+pt,error/login/invalid_username_password,Nome de utilizador ou palavra-passe incorretos.
+pt,error/login/network,Não foi possível ligar ao servidor. Verifique a sua ligação e tente novamente.
+pt,error/login/popup_closed,A janela pop-up foi fechada. Tente novamente.
+pt,error/login/unauthorized,As permissões não foram concedidas. Tente novamente.
+pt,error/login/mfa_registration_required,"A autenticação multifator é obrigatória, mas o seu dispositivo não está registado. Registe-o antes de continuar."
+pt,error/login/mfa_invalid_code,Código incorreto. Tente novamente.
+pt,error/login/password_change_required,Tem de atualizar a sua palavra-passe porque esta é a sua primeira sessão ou porque a sua palavra-passe expirou.
+pt,error/login/password_leaked,"Detetámos um possível problema de segurança com esta conta. Para a proteger, bloqueámos este início de sessão. Foi enviado um e‑mail com instruções para desbloquear a sua conta."
+pt,error/login/too_many_attempts,A sua conta foi bloqueada após várias tentativas consecutivas de início de sessão.
+pt,error/login/too_many_requests,"Lamentamos. Existem demasiados pedidos neste momento. Recarregue a página e tente novamente. Se persistir, tente mais tarde."
+pt,error/login/session_missing,Não foi possível concluir o seu pedido de autenticação. Tente novamente depois de fechar todas as janelas de diálogo abertas.
+pt,error/login/not_matching_email,Utilize o seu e‑mail corporativo para iniciar sessão.
+pt,error/passwordless/bad_email,O e‑mail é inválido
+pt,error/passwordless/bad_phone_number,O número de telefone é inválido
+pt,error/passwordless/fallback,"Lamentamos, algo correu mal"
+pt,error/passwordless/invalid_captcha,Resolva a pergunta de verificação para confirmar que não é um robô.
+pt,error/passwordless/invalid_recaptcha,Selecione a caixa para confirmar que não é um robô.
+pt,error/signUp/invalid_password,A palavra-passe é inválida.
+pt,error/signUp/fallback,"Lamentamos, algo correu mal ao tentar registar-se."
+pt,error/signUp/password_dictionary_error,A palavra-passe é demasiado comum.
+pt,error/signUp/password_leaked,"Esta combinação de credenciais foi detetada numa violação de dados pública noutro site. Antes de criar a sua conta, utilize uma palavra-passe diferente para mantê-la segura."
+pt,error/signUp/password_no_user_info_error,A palavra-passe baseia-se em informações do utilizador.
+pt,error/signUp/password_strength_error,A palavra-passe é demasiado fraca.
+pt,error/signUp/user_exists,O utilizador já existe.
+pt,error/signUp/username_exists,O nome de utilizador já existe.
+pt,error/signUp/social_signup_needs_terms_acception,Aceite os Termos de Serviço abaixo para continuar.
+pt,success/logIn,Obrigado por iniciar sessão.
+pt,success/forgotPassword,Acabámos de lhe enviar um e‑mail para redefinir a sua palavra-passe.
+pt,success/magicLink,Enviámos um link para iniciar sessão<br />em %s.
+pt,success/signUp,Obrigado pelo seu registo.
+pt,blankErrorHint,
+pt,blankPasswordErrorHint,A palavra-passe não pode estar em branco
+pt,blankEmailErrorHint,O e‑mail não pode estar em branco
+pt,blankUsernameErrorHint,O nome de utilizador não pode estar em branco
+pt,blankCaptchaErrorHint,Não pode estar em branco
+pt,codeInputPlaceholder,o seu código
+pt,databaseSignUpInstructions,
+pt,emailInputPlaceholder,voce@exemplo.com
+pt,failedLabel,Falhou!
+pt,forgotPasswordTitle,Redefinir a palavra-passe
+pt,forgotPasswordAction,Não se lembra da palavra-passe?
+pt,forgotPasswordInstructions,Introduza o seu e‑mail. Enviar‑lhe‑emos um e‑mail para redefinir a sua palavra‑passe.
+pt,forgotPasswordSubmitLabel,Enviar e‑mail
+pt,invalidErrorHint,
+pt,invalidPasswordErrorHint,A palavra‑passe é inválida
+pt,invalidEmailErrorHint,O e‑mail é inválido
+pt,invalidUsernameErrorHint,O nome de utilizador é inválido
+pt,lastLoginInstructions,Da última vez iniciou sessão com
+pt,loginAtLabel,Iniciar sessão em %s
+pt,loginLabel,Iniciar sessão
+pt,loginSubmitLabel,Iniciar sessão
+pt,loginWithLabel,Iniciar sessão com %s
+pt,notYourAccountAction,Não é a sua conta?
+pt,passwordInputPlaceholder,a sua palavra‑passe
+pt,passwordStrength/containsAtLeast,Conter pelo menos %d dos seguintes %d tipos de caracteres:
+pt,passwordStrength/identicalChars,"Não mais do que %s caracteres idênticos seguidos (p. ex., ""%s"" não permitido)"
+pt,passwordStrength/nonEmpty,É necessária uma palavra‑passe não vazia
+pt,passwordStrength/numbers,"Números (ou seja, 0‑9)"
+pt,passwordStrength/lengthAtLeast,Pelo menos %d caracteres
+pt,passwordStrength/lowerCase,Letras minúsculas (a‑z)
+pt,passwordStrength/shouldContain,Deve conter:
+pt,passwordStrength/specialCharacters,"Caracteres especiais (p. ex., !@#$%^&*)"
+pt,passwordStrength/upperCase,Letras maiúsculas (A‑Z)
+pt,passwordlessEmailAlternativeInstructions,"Caso contrário, introduza o seu e‑mail para iniciar sessão<br/>ou criar uma conta"
+pt,passwordlessEmailCodeInstructions,Foi enviado um e‑mail com o código para %s.
+pt,passwordlessEmailInstructions,Introduza o seu e‑mail para iniciar sessão<br/>ou criar uma conta
+pt,passwordlessSMSAlternativeInstructions,"Caso contrário, introduza o seu telefone para iniciar sessão<br/>ou criar uma conta"
+pt,passwordlessSMSCodeInstructions,Foi enviada uma SMS com o código para %s.
+pt,passwordlessSMSInstructions,Introduza o seu telefone para iniciar sessão<br/>ou criar uma conta
+pt,phoneNumberInputPlaceholder,o seu número de telefone
+pt,resendCodeAction,Não recebeu o código?
+pt,resendLabel,Reenviar
+pt,resendingLabel,A reenviar...
+pt,retryLabel,Tentar novamente
+pt,sentLabel,Enviado!
+pt,showPassword,Mostrar palavra‑passe
+pt,signUpTitle,Criar conta
+pt,signUpLabel,Registar
+pt,signUpSubmitLabel,Registar
+pt,signUpTerms,"Ao registar‑se, aceita os nossos termos de serviço e a política de privacidade."
+pt,signUpWithLabel,Registar com %s
+pt,socialLoginInstructions,
+pt,socialSignUpInstructions,
+pt,ssoEnabled,Início de sessão único ativado
+pt,submitLabel,Submeter
+pt,unrecoverableError,Algo correu mal.<br />Contacte o suporte técnico.
+pt,usernameFormatErrorHint,"Use %d-%d letras, números e os seguintes caracteres: ""_"", ""."", ""+"", ""-"""
+pt,usernameInputPlaceholder,o seu nome de utilizador
+pt,welcome,Bem‑vindo(a) %s!
+pt,mfaInputPlaceholder,Código
+pt,mfaLoginTitle,Verificação em 2 etapas
+pt,mfaLoginInstructions,Introduza o código de verificação gerado pela sua aplicação móvel.
+pt,mfaSubmitLabel,Iniciar sessão
+pt,mfaCodeErrorHint,Use %d números

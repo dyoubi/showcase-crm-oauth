@@ -1,0 +1,104 @@
+lang,path,default
+fr,error/forgotPassword/too_many_requests,Vous avez atteint la limite de tentatives de changement de mot de passe. Veuillez patienter avant de réessayer.
+fr,error/forgotPassword/fallback,"Désolé, une erreur est survenue lors de la demande de changement de mot de passe."
+fr,error/login/blocked_user,L’utilisateur est bloqué.
+fr,error/login/invalid_user_password,Identifiants incorrects.
+fr,error/login/invalid_captcha,Résolvez la question de vérification pour confirmer que vous n’êtes pas un robot.
+fr,error/login/invalid_recaptcha,Cochez la case pour confirmer que vous n’êtes pas un robot.
+fr,error/login/fallback,"Désolé, une erreur est survenue lors de la tentative de connexion."
+fr,error/login/invalid_code,Code incorrect.
+fr,error/login/invalid_email_password,Adresse e‑mail ou mot de passe incorrect.
+fr,error/login/invalid_username_password,Nom d’utilisateur ou mot de passe incorrect.
+fr,error/login/network,Impossible de joindre le serveur. Vérifiez votre connexion puis réessayez.
+fr,error/login/popup_closed,Fenêtre contextuelle fermée. Réessayez.
+fr,error/login/unauthorized,Autorisations non accordées. Réessayez.
+fr,error/login/mfa_registration_required,L’authentification multifacteur est requise mais votre appareil n’est pas inscrit. Veuillez l’inscrire avant de continuer.
+fr,error/login/mfa_invalid_code,Code incorrect. Veuillez réessayer.
+fr,error/login/password_change_required,Vous devez mettre à jour votre mot de passe car il s’agit de votre première connexion ou parce que votre mot de passe a expiré.
+fr,error/login/password_leaked,"Nous avons détecté un risque potentiel de sécurité avec ce compte. Pour protéger votre compte, cette connexion a été bloquée. Un e‑mail vous a été envoyé avec les instructions pour le débloquer."
+fr,error/login/too_many_attempts,Votre compte a été bloqué après plusieurs tentatives de connexion consécutives.
+fr,error/login/too_many_requests,"Désolé. Il y a trop de requêtes pour le moment. Veuillez recharger la page et réessayer. Si le problème persiste, réessayez plus tard."
+fr,error/login/session_missing,Impossible de terminer votre demande d’authentification. Veuillez réessayer après avoir fermé toutes les fenêtres de dialogue ouvertes.
+fr,error/login/not_matching_email,Veuillez utiliser votre adresse e‑mail professionnelle pour vous connecter.
+fr,error/passwordless/bad_email,L’adresse e‑mail est invalide
+fr,error/passwordless/bad_phone_number,Le numéro de téléphone est invalide
+fr,error/passwordless/fallback,"Désolé, une erreur est survenue"
+fr,error/passwordless/invalid_captcha,Résolvez la question de vérification pour confirmer que vous n’êtes pas un robot.
+fr,error/passwordless/invalid_recaptcha,Cochez la case pour confirmer que vous n’êtes pas un robot.
+fr,error/signUp/invalid_password,Le mot de passe est invalide.
+fr,error/signUp/fallback,"Désolé, une erreur est survenue lors de l’inscription."
+fr,error/signUp/password_dictionary_error,Le mot de passe est trop commun.
+fr,error/signUp/password_leaked,"Cette combinaison d’identifiants a été détectée dans une fuite de données publique sur un autre site. Avant de créer votre compte, veuillez utiliser un mot de passe différent pour le sécuriser."
+fr,error/signUp/password_no_user_info_error,Le mot de passe est basé sur des informations utilisateur.
+fr,error/signUp/password_strength_error,Le mot de passe est trop faible.
+fr,error/signUp/user_exists,L’utilisateur existe déjà.
+fr,error/signUp/username_exists,Le nom d’utilisateur existe déjà.
+fr,error/signUp/social_signup_needs_terms_acception,Veuillez accepter les Conditions d’utilisation ci‑dessous pour continuer.
+fr,success/logIn,Merci de vous être connecté.
+fr,success/forgotPassword,Nous venons de vous envoyer un e‑mail pour réinitialiser votre mot de passe.
+fr,success/magicLink,Nous vous avons envoyé un lien pour vous connecter<br />à %s.
+fr,success/signUp,Merci pour votre inscription.
+fr,blankErrorHint,
+fr,blankPasswordErrorHint,Le mot de passe ne peut pas être vide
+fr,blankEmailErrorHint,L’e‑mail ne peut pas être vide
+fr,blankUsernameErrorHint,Le nom d’utilisateur ne peut pas être vide
+fr,blankCaptchaErrorHint,Ne peut pas être vide
+fr,codeInputPlaceholder,votre code
+fr,databaseSignUpInstructions,
+fr,emailInputPlaceholder,vous@exemple.com
+fr,failedLabel,Échec !
+fr,forgotPasswordTitle,Réinitialiser votre mot de passe
+fr,forgotPasswordAction,Mot de passe oublié ?
+fr,forgotPasswordInstructions,Veuillez saisir votre adresse e‑mail. Nous vous enverrons un e‑mail pour réinitialiser votre mot de passe.
+fr,forgotPasswordSubmitLabel,Envoyer l’e‑mail
+fr,invalidErrorHint,
+fr,invalidPasswordErrorHint,Le mot de passe est invalide
+fr,invalidEmailErrorHint,L’e‑mail est invalide
+fr,invalidUsernameErrorHint,Le nom d’utilisateur est invalide
+fr,lastLoginInstructions,"La dernière fois, vous vous êtes connecté avec"
+fr,loginAtLabel,Connexion à %s
+fr,loginLabel,Se connecter
+fr,loginSubmitLabel,Se connecter
+fr,loginWithLabel,Se connecter avec %s
+fr,notYourAccountAction,Ce n’est pas votre compte ?
+fr,passwordInputPlaceholder,votre mot de passe
+fr,passwordStrength/containsAtLeast,Contenir au moins %d des %d types de caractères suivants :
+fr,passwordStrength/identicalChars,"Pas plus de %s caractères identiques d’affilée (par ex., « %s » non autorisé)"
+fr,passwordStrength/nonEmpty,Un mot de passe non vide est requis
+fr,passwordStrength/numbers,Chiffres (c.-à-d. 0‑9)
+fr,passwordStrength/lengthAtLeast,Au moins %d caractères
+fr,passwordStrength/lowerCase,Lettres minuscules (a‑z)
+fr,passwordStrength/shouldContain,Doit contenir :
+fr,passwordStrength/specialCharacters,Caractères spéciaux (ex. !@#$%^&*)
+fr,passwordStrength/upperCase,Lettres majuscules (A‑Z)
+fr,passwordlessEmailAlternativeInstructions,"Sinon, entrez votre e‑mail pour vous connecter<br/>ou créer un compte"
+fr,passwordlessEmailCodeInstructions,Un e‑mail contenant le code a été envoyé à %s.
+fr,passwordlessEmailInstructions,Entrez votre e‑mail pour vous connecter<br/>ou créer un compte
+fr,passwordlessSMSAlternativeInstructions,"Sinon, entrez votre téléphone pour vous connecter<br/>ou créer un compte"
+fr,passwordlessSMSCodeInstructions,Un SMS contenant le code a été envoyé à %s.
+fr,passwordlessSMSInstructions,Entrez votre téléphone pour vous connecter<br/>ou créer un compte
+fr,phoneNumberInputPlaceholder,votre numéro de téléphone
+fr,resendCodeAction,Vous n’avez pas reçu le code ?
+fr,resendLabel,Renvoyer
+fr,resendingLabel,Renvoi…
+fr,retryLabel,Réessayer
+fr,sentLabel,Envoyé !
+fr,showPassword,Afficher le mot de passe
+fr,signUpTitle,Créer un compte
+fr,signUpLabel,Inscription
+fr,signUpSubmitLabel,S’inscrire
+fr,signUpTerms,"En vous inscrivant, vous acceptez nos conditions d’utilisation et notre politique de confidentialité."
+fr,signUpWithLabel,S’inscrire avec %s
+fr,socialLoginInstructions,
+fr,socialSignUpInstructions,
+fr,ssoEnabled,Authentification unique activée
+fr,submitLabel,Envoyer
+fr,unrecoverableError,Une erreur est survenue.<br />Veuillez contacter le support technique.
+fr,usernameFormatErrorHint,"Utilisez %d‑%d lettres, chiffres et les caractères suivants : ""_"", ""."", ""+"", ""-"""
+fr,usernameInputPlaceholder,votre nom d’utilisateur
+fr,welcome,Bienvenue %s !
+fr,mfaInputPlaceholder,Code
+fr,mfaLoginTitle,Vérification en 2 étapes
+fr,mfaLoginInstructions,Veuillez saisir le code de vérification généré par votre application mobile.
+fr,mfaSubmitLabel,Se connecter
+fr,mfaCodeErrorHint,Utilisez %d chiffres

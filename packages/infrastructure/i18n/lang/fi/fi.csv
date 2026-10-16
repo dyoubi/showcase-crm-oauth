@@ -1,0 +1,104 @@
+lang,path,default
+fi,error/forgotPassword/too_many_requests,Olet saavuttanut salasanan vaihdon yritysrajan. Odota ennen kuin yrität uudelleen.
+fi,error/forgotPassword/fallback,"Pahoittelut, jokin meni pieleen pyydettäessä salasanan vaihtoa."
+fi,error/login/blocked_user,Käyttäjä on estetty.
+fi,error/login/invalid_user_password,Väärät tunnistetiedot.
+fi,error/login/invalid_captcha,"Ratkaise tarkistuskysymys vahvistaaksesi, ettet ole robotti."
+fi,error/login/invalid_recaptcha,"Valitse valintaruutu vahvistaaksesi, ettet ole robotti."
+fi,error/login/fallback,"Pahoittelut, jokin meni pieleen kirjautumisessa."
+fi,error/login/invalid_code,Väärä koodi.
+fi,error/login/invalid_email_password,Väärä sähköposti tai salasana.
+fi,error/login/invalid_username_password,Väärä käyttäjänimi tai salasana.
+fi,error/login/network,Palvelimeen ei saatu yhteyttä. Tarkista yhteytesi ja yritä uudelleen.
+fi,error/login/popup_closed,Ponnahdusikkuna suljettiin. Yritä uudelleen.
+fi,error/login/unauthorized,Käyttöoikeuksia ei myönnetty. Yritä uudelleen.
+fi,error/login/mfa_registration_required,"Monivaiheinen todennus vaaditaan, mutta laitteesi ei ole rekisteröity. Rekisteröi se ennen jatkamista."
+fi,error/login/mfa_invalid_code,Väärä koodi. Yritä uudelleen.
+fi,error/login/password_change_required,"Sinun on päivitettävä salasanasi, koska kirjaudut ensimmäistä kertaa tai salasanasi on vanhentunut."
+fi,error/login/password_leaked,Havaitsimme mahdollisen tietoturvaongelman tällä tilillä. Suojataksemme tiliä estimme tämän kirjautumisen. Sähköpostilla lähetettiin ohjeet tilin avaamiseen.
+fi,error/login/too_many_attempts,Tilisi on estetty useiden peräkkäisten kirjautumisyritysten jälkeen.
+fi,error/login/too_many_requests,Pahoittelut. Pyyntöjä on tällä hetkellä liikaa. Lataa sivu uudelleen ja yritä myöhemmin.
+fi,error/login/session_missing,Todennuspyyntöä ei voitu suorittaa loppuun. Yritä uudelleen suljettuasi kaikki avoimet ikkunat.
+fi,error/login/not_matching_email,Käytä kirjautumiseen yrityssähköpostiasi.
+fi,error/passwordless/bad_email,Sähköpostiosoite on virheellinen
+fi,error/passwordless/bad_phone_number,Puhelinnumero on virheellinen
+fi,error/passwordless/fallback,"Pahoittelut, jokin meni pieleen"
+fi,error/passwordless/invalid_captcha,"Ratkaise tarkistuskysymys vahvistaaksesi, ettet ole robotti."
+fi,error/passwordless/invalid_recaptcha,"Valitse valintaruutu vahvistaaksesi, ettet ole robotti."
+fi,error/signUp/invalid_password,Salasana on virheellinen.
+fi,error/signUp/fallback,"Pahoittelut, jokin meni pieleen rekisteröityessä."
+fi,error/signUp/password_dictionary_error,Salasana on liian yleinen.
+fi,error/signUp/password_leaked,Tämä tunnusyhdistelmä havaittiin julkisessa tietovuodossa toisella sivustolla. Ennen tilin luomista käytä toista salasanaa suojataksesi tilisi.
+fi,error/signUp/password_no_user_info_error,Salasana perustuu käyttäjätietoihin.
+fi,error/signUp/password_strength_error,Salasana on liian heikko.
+fi,error/signUp/user_exists,Käyttäjä on jo olemassa.
+fi,error/signUp/username_exists,Käyttäjätunnus on jo olemassa.
+fi,error/signUp/social_signup_needs_terms_acception,Hyväksy alla olevat käyttöehdot jatkaaksesi.
+fi,success/logIn,Kiitos kirjautumisesta.
+fi,success/forgotPassword,Lähetimme sinulle juuri sähköpostin salasanan palauttamiseksi.
+fi,success/magicLink,Lähetimme linkin kirjautumista varten<br />kohteeseen %s.
+fi,success/signUp,Kiitos rekisteröitymisestä.
+fi,blankErrorHint,
+fi,blankPasswordErrorHint,Salasana ei voi olla tyhjä
+fi,blankEmailErrorHint,Sähköposti ei voi olla tyhjä
+fi,blankUsernameErrorHint,Käyttäjänimi ei voi olla tyhjä
+fi,blankCaptchaErrorHint,Ei voi olla tyhjä
+fi,codeInputPlaceholder,koodisi
+fi,databaseSignUpInstructions,
+fi,emailInputPlaceholder,sina@esimerkki.com
+fi,failedLabel,Epäonnistui!
+fi,forgotPasswordTitle,Palauta salasanasi
+fi,forgotPasswordAction,Etkö muista salasanaa?
+fi,forgotPasswordInstructions,Anna sähköpostiosoitteesi. Lähetämme sinulle sähköpostin salasanan palauttamista varten.
+fi,forgotPasswordSubmitLabel,Lähetä sähköposti
+fi,invalidErrorHint,
+fi,invalidPasswordErrorHint,Salasana on virheellinen
+fi,invalidEmailErrorHint,Sähköposti on virheellinen
+fi,invalidUsernameErrorHint,Käyttäjänimi on virheellinen
+fi,lastLoginInstructions,Edellisellä kerralla kirjauduit sisään käyttäen
+fi,loginAtLabel,Kirjaudu sisään kohteessa %s
+fi,loginLabel,Kirjaudu sisään
+fi,loginSubmitLabel,Kirjaudu sisään
+fi,loginWithLabel,Kirjaudu sisään käyttäen %s
+fi,notYourAccountAction,Eikö tämä ole tilisi?
+fi,passwordInputPlaceholder,salasanasi
+fi,passwordStrength/containsAtLeast,Sisältää vähintään %d seuraavista %d merkkityypeistä:
+fi,passwordStrength/identicalChars,"Enintään %s identtistä merkkiä peräkkäin (esim. ""%s"" ei sallittu)"
+fi,passwordStrength/nonEmpty,Ei-tyhjä salasana vaaditaan
+fi,passwordStrength/numbers,Numerot (eli 0–9)
+fi,passwordStrength/lengthAtLeast,Vähintään %d merkkiä
+fi,passwordStrength/lowerCase,Pienet kirjaimet (a–z)
+fi,passwordStrength/shouldContain,Tulisi sisältää:
+fi,passwordStrength/specialCharacters,Erikoismerkit (esim. !@#$%^&*)
+fi,passwordStrength/upperCase,Isot kirjaimet (A–Z)
+fi,passwordlessEmailAlternativeInstructions,Muussa tapauksessa anna sähköpostisi kirjautuaksesi<br/>tai luodaksesi tilin
+fi,passwordlessEmailCodeInstructions,"Sähköposti, jossa on koodi, on lähetetty osoitteeseen %s."
+fi,passwordlessEmailInstructions,Anna sähköpostisi kirjautuaksesi<br/>tai luodaksesi tilin
+fi,passwordlessSMSAlternativeInstructions,Muussa tapauksessa anna puhelimesi kirjautuaksesi<br/>tai luodaksesi tilin
+fi,passwordlessSMSCodeInstructions,"Tekstiviesti, jossa on koodi, on lähetetty numeroon %s."
+fi,passwordlessSMSInstructions,Anna puhelinnumerosi kirjautuaksesi<br/>tai luodaksesi tilin
+fi,phoneNumberInputPlaceholder,puhelinnumerosi
+fi,resendCodeAction,Etkö saanut koodia?
+fi,resendLabel,Lähetä uudelleen
+fi,resendingLabel,Lähetetään uudelleen...
+fi,retryLabel,Yritä uudelleen
+fi,sentLabel,Lähetetty!
+fi,showPassword,Näytä salasana
+fi,signUpTitle,Luo tili
+fi,signUpLabel,Rekisteröidy
+fi,signUpSubmitLabel,Rekisteröidy
+fi,signUpTerms,Rekisteröitymällä hyväksyt käyttöehtomme ja tietosuojakäytäntömme.
+fi,signUpWithLabel,Rekisteröidy käyttäen %s
+fi,socialLoginInstructions,
+fi,socialSignUpInstructions,
+fi,ssoEnabled,Kertakirjautuminen käytössä
+fi,submitLabel,Lähetä
+fi,unrecoverableError,Jokin meni pieleen.<br />Ota yhteyttä tekniseen tukeen.
+fi,usernameFormatErrorHint,"Käytä %d–%d kirjainta, numeroa ja seuraavia merkkejä: ""_"", ""."", ""+"", ""-"""
+fi,usernameInputPlaceholder,käyttäjänimesi
+fi,welcome,Tervetuloa %s!
+fi,mfaInputPlaceholder,Koodi
+fi,mfaLoginTitle,Kaksivaiheinen vahvistus
+fi,mfaLoginInstructions,Anna matkapuhelinsovelluksesi luoma vahvistuskoodi.
+fi,mfaSubmitLabel,Kirjaudu sisään
+fi,mfaCodeErrorHint,Käytä %d numeroa

@@ -1,0 +1,69 @@
+model LoginSession {
+    org_id           String  @db.VarChar(32)
+    sid              String  @db.VarChar(128)
+    client_id        String  @db.VarChar(64)
+    subject          String  @db.VarChar
+    audience         String  @db.VarChar(128)
+    scope            String  @db.VarChar()
+    auth_time        Int     @db.Integer()
+    last_active_time Int     @db.Integer()
+    max_age          Int     @db.Integer()
+    expires          Int?    @db.Integer()
+    app_sid          String? @db.VarChar(128)
+
+    revoked    Boolean?  @default(false) @db.Boolean
+    revoked_at DateTime? @db.Timestamptz(6)
+
+    access_tokens  AccessToken[]
+    refresh_tokens RefreshToken[]
+
+    @@id([org_id, sid], map: "pk_login_session")
+    @@map("login_sessions")
+    @@schema("authentication")
+}
+
+model AccessToken {
+    org_id       String    @db.VarChar(32)
+    jti          String    @db.VarChar
+    sid          String    @db.VarChar(128)
+    client_id    String    @db.VarChar(64)
+    subject      String    @db.VarChar
+    audience     String    @db.VarChar(128)
+    access_token String    @db.VarChar
+    expires      Int       @db.Integer
+    issued_at    Int       @db.Integer
+    ip           String?   @db.VarChar(45)
+    user_agent   String?   @db.VarChar(128)
+    revoked      Boolean?  @default(false) @db.Boolean
+    revoked_at   DateTime? @db.Timestamptz(6)
+
+    login_session LoginSession   @relation(fields: [org_id, sid], references: [org_id, sid], map: "fk_access_token_login_session", onDelete: Cascade)
+    refresh_token RefreshToken[]
+
+    @@id([org_id, jti], map: "pk_access_tokens")
+    @@unique([org_id, sid, jti], map: "uq_login_session_org_id_sid")
+    @@map("access_tokens")
+    @@schema("authentication")
+}
+
+model RefreshToken {
+    org_id        String @db.VarChar(32)
+    client_id     String @db.VarChar(64)
+    subject       String @db.VarChar
+    sid           String @db.VarChar(128)
+    jti           String @db.VarChar
+    jti_access    String @db.VarChar
+    refresh_token String @db.VarChar()
+    expires       Int    @db.Integer
+    issued_at     Int    @db.Integer
+
+    revoked    Boolean?  @default(false) @db.Boolean
+    revoked_at DateTime? @db.Timestamptz(6)
+
+    login_session LoginSession @relation(fields: [org_id, sid], references: [org_id, sid], map: "fk_refresh_token_login_session", onDelete: Cascade)
+    access_token  AccessToken  @relation(fields: [org_id, jti_access], references: [org_id, jti], map: "fk_refresh_token_access_token", onDelete: Cascade)
+
+    @@id([org_id, jti], map: "pk_refresh_tokens")
+    @@map("refresh_tokens")
+    @@schema("authentication")
+}

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ email_title | default: "Action required" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Preheader text: shown in inbox preview, hidden in email body -->
+    <meta name="x-apple-disable-message-reformatting">
+    <style>
+      /* Basic resets */
+      html, body { margin:0 !important; padding:0 !important; height:100% !important; width:100% !important; }
+      * { -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; }
+      /* Stops iOS blue links */
+      a[x-apple-data-detectors], u + #body a, #MessageViewBody a {
+        color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important;
+      }
+      /* Outlook */
+      table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; }
+      img { -ms-interpolation-mode:bicubic; border:0; outline:none; text-decoration:none; }
+      /* Responsive */
+      @media screen and (max-width: 600px) {
+        .container { width: 100% !important; }
+        .px { padding-left: 20px !important; padding-right: 20px !important; }
+        .py { padding-top: 24px !important; padding-bottom: 24px !important; }
+        h1 { font-size: 22px !important; line-height: 28px !important; }
+      }
+      /* Optional dark mode hints (supported in some clients) */
+      @media (prefers-color-scheme: dark) {
+        body, .bg-body { background: #0f1115 !important; }
+        .card { background: #161a22 !important; }
+        .text-muted { color: #9aa4b2 !important; }
+        .text { color: #e6e8eb !important; }
+        .btn { color: #ffffff !important; }
+      }
+    </style>
+  </head>
+  <body id="body" class="bg-body" style="background:#f3f5f9; margin:0; padding:0;">
+    <!-- Hidden preheader (inbox preview) -->
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0; visibility:hidden; mso-hide:all;">
+      {{ preheader | default: "Secure action for your {{ app_name }} account." }}
+      &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="center" style="padding: 24px 12px;">
+          <!-- Container -->
+          <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px;">
+            <!-- Header -->
+            <tr>
+              <td align="left" class="px py" style="padding: 24px; background:#ffffff; border-radius:14px 14px 0 0;">
+                <a href="{{ app_url | default: site_url }}" target="_blank" style="text-decoration:none;">
+                  <img src="{{ logo_url | default: site_logo_url }}" width="{{ logo_width | default: 120 }}" height="{{ logo_height | default: 36 }}" alt="{{ app_name | default: 'Your App' }} logo" style="display:block; height:auto;">
+                </a>
+              </td>
+            </tr>
+
+            <!-- Main card -->
+            <tr>
+              <td class="card px" style="background:#ffffff; padding: 8px 24px 24px 24px;">
+                <!-- Title -->
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="padding-top:16px;">
+                      <h1 class="text" style="margin:0; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size:24px; line-height:32px; color:#111827; font-weight:700;">
+                        {{ email_title | default: "Confirm your sign-in" }}
+                      </h1>
+                    </td>
+                  </tr>
+
+                  <!-- Greeting -->
+                  {% if greeting_name or show_greeting %}
+                  <tr>
+                    <td style="padding-top: 12px;">
+                      <p class="text" style="margin:0; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size:16px; line-height:24px; color:#111827;">
+                        Hello{% if greeting_name %} {{ greeting_name }}{% endif %},
+                      </p>
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                  <!-- Message block -->
+                  <tr>
+                    <td style="padding-top: 12px;">
+                      {% if message_html %}
+                        <!-- If you pass trusted HTML, it will render here -->
+                        <div class="text" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size:16px; line-height:24px; color:#111827;">
+                          {{ message_html }}
+                        </div>
+                      {% else %}
+                        <p class="text" style="margin:0; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size:16px; line-height:24px; color:#111827;">
+                          {{ message_text | default: "We received a request to continue your authentication flow. To proceed securely, please complete the action below." | newline_to_br }}
+                        </p>
+                      {% endif %}
+                    </td>
+                  </tr>
+
+                  <!-- Optional OTP block for OIDC flows -->
+                  {% if otp_code %}
+                  <tr>
+                    <td style="padding-top:16px;">
+                      <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="left">
+                        <tr>
+                          <td style="background:#111827; border-radius:10px; padding:12px 16px;">
+                            <code style="font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size:18px; line-height:24px; color:#ffffff; letter-spacing:2px;">
+                              {{ otp_code }}
+                            </code>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                  <!-- CTA -->
+                  {% if button_url %}
+                  <tr>
+                    <td align="left" style="padding-top: 24px; padding-bottom: 8px;">
+                      <!--[if mso]>
+                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{ button_url }}" style="height:48px;v-text-anchor:middle;width:280px;" arcsize="12%" stroke="f" fillcolor="#0ea5e9">
+                        <w:anchorlock/>
+                        <center style="color:#ffffff;font-family:Segoe UI, Helvetica, Arial, sans-serif;font-size:16px;font-weight:700;">
+                          {{ button_text | default: "Continue" }}
+                        </center>
+                      </v:roundrect>
+                      <![endif]-->
+                      <!--[if !mso]><!-- -->
+                      <a class="btn" href="{{ button_url }}" target="_blank"
+                        style="background:#0ea5e9; color:#ffffff; display:inline-block; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-weight:700; font-size:16px; line-height:48px; text-align:center; text-decoration:none; width:auto; min-width:200px; padding:0 24px; border-radius:8px;">
+                        {{ button_text | default: "Continue" }}
+                      </a>
+                      <!--<![endif]-->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 8px;">
+                      <p class="text-muted" style="margin:0; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size:13px; line-height:20px; color:#6b7280;">
+                        If the button doesn’t work, copy and paste this link into your browser:<br>
+                        <a href="{{ button_url }}" target="_blank" style="color:#0ea5e9; word-break:break-all;">{{ button_url }}</a>
+                      </p>
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                  <!-- Security note -->
+                  <tr>
+                    <td style="padding-top: 16px;">
+                      <p class="text-muted" style="margin:0; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size:13px; line-height:20px; color:#6b7280;">
+                        This link{% if link_ttl_minutes %} is valid for {{ link_ttl_minutes }} minutes{% endif %}. If you didn’t request this, you can safely ignore this email.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <!-- Secondary help -->
+                  {% if support_email or support_url %}
+                  <tr>
+                    <td style="padding-top: 12px;">
+                      <p class="text-muted" style="margin:0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; font-size:13px; line-height:20px; color:#6b7280;">
+                        Need help? Contact us at
+                        {% if support_email %}
+                          <a href="mailto:{{ support_email }}" style="color:#0ea5e9;">{{ support_email }}</a>
+                        {% endif %}
+                        {% if support_email and support_url %} or {% endif %}
+                        {% if support_url %}
+                          <a href="{{ support_url }}" style="color:#0ea5e9;">Support Center</a>
+                        {% endif %}.
+                      </p>
+                    </td>
+                  </tr>
+                  {% endif %}
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td class="px py" style="padding: 20px 24px 32px 24px; background:#ffffff; border-radius:0 0 14px 14px;">
+                <hr style="border:none; border-top:1px solid #e5e7eb; margin:0 0 16px 0;">
+                <p class="text-muted" style="margin:0 0 8px 0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; font-size:12px; line-height:18px; color:#6b7280;">
+                  {{ app_name | default: "Your App" }}<span style="opacity:.6;"> — OpenID Connect</span>
+                </p>
+                <p class="text-muted" style="margin:0 0 8px 0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; font-size:12px; line-height:18px; color:#6b7280;">
+                  {{ company_legal_name | default: "Your Company, Inc." }} · {{ company_address | default: "123 Example St, City, Country" }}
+                </p>
+                {% if legal_url %}
+                <p class="text-muted" style="margin:0 0 8px 0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; font-size:12px; line-height:18px; color:#6b7280;">
+                  <a href="{{ legal_url }}" style="color:#0ea5e9;">Terms</a>
+                  {% if privacy_url %} · <a href="{{ privacy_url }}" style="color:#0ea5e9;">Privacy</a>{% endif %}
+                </p>
+                {% endif %}
+                {% if transactional_unsubscribe_url %}
+                <p class="text-muted" style="margin:0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; font-size:12px; line-height:18px; color:#6b7280;">
+                  You’re receiving this because it’s related to a security or account action. To adjust notifications, manage your preferences
+                  <a href="{{ transactional_unsubscribe_url }}" style="color:#0ea5e9;">here</a>.
+                </p>
+                {% endif %}
+              </td>
+            </tr>
+
+          </table>
+          <!-- /Container -->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

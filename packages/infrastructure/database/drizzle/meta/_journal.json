@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1756254143590,
+      "tag": "0000_000_DDL_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1756254177693,
+      "tag": "0001_000_DDL_partitioning",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1756254187076,
+      "tag": "0002_000_DDL_functions",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1756254196416,
+      "tag": "0003_000_DDL_seeding",
+      "breakpoints": true
+    }
+  ]
+}

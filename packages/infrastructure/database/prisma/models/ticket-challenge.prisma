@@ -1,0 +1,24 @@
+model TicketChallenge {
+    org_id       String
+    tid          String
+    jti          String  @db.VarChar
+    cid          String  @db.VarChar
+    kid          String  @db.VarChar
+    usage        String  @db.VarChar
+    redirect_uri String  @db.VarChar
+    user_id      String? @db.VarChar
+    connection   String  @db.VarChar
+    app_sid      String? @db.VarChar
+    secret       String  @db.VarChar
+    expires      Int     @db.Integer
+    issued_at    Int     @db.Integer
+
+    revoked    Boolean?  @default(false) @db.Boolean
+    revoked_at DateTime? @db.Timestamptz(6)
+
+    @@id([org_id, tid], map: "pk_ticket_challenges")
+    @@unique([org_id, tid, jti], map: "uq_ticket_challenge_tid_jti")
+    @@index([org_id, jti], map: "ix_ticket_challenge_jti")
+    @@map("ticket_challenges")
+    @@schema("authentication")
+}
